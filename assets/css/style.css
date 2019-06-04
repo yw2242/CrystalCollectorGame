@@ -1,5 +1,4 @@
 body {
-    background-color: #ff9474;
 }
 
 
@@ -31,7 +30,7 @@ p {
 
 
 #random-box {
-    background-color: #d34535;
+    background-color: salmon;
     width: 200px;
     height: 90px;
     margin: 8px 30px 0px;

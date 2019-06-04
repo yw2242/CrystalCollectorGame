@@ -18,54 +18,58 @@ $(document).ready(function() {
 
 
     // make each crystal represent a number
-    var valueRed = parseInt(valueRed, 5);
-    var valueYellow = parseInt(valueYellow, 1);
-    var valueGreen = parseInt(valueGreen, 10);
-    var valueBlue = parseInt(valueBlue, 2);
+    var valueRed = 5;
+    var valueYellow = 1;
+    var valueGreen = 10;
+    var valueBlue = 2;
 
 
 
     // when clicked, add up the numbers and show it in #score-box
     $("#red").on("click", function() {
-        score + valueRed;
-        console.log(valueRed);
-        return score;
+        score = score + valueRed;
+        console.log(score);
+         // return score;
+       $("#score").text(score);
 
       });
 
       $("#yellow").on("click", function() {
         score = score + valueYellow;
         console.log(score);
-        return score;
+        // return score;
+        $("#score").text(score);
 
       });
 
       $("#green").on("click", function() {
         score = score + valueGreen;
         console.log(score);
-        return score;
+        // return score;
+        $("#score").text(score);
 
       });
 
       $("#blue").on("click", function() {
         score = score + valueBlue;
         console.log(score);
-        return score;
+        // return score;
+        $("#score").text(score);
 
       });
 
 
 
     // if the number added up === the random number, win!
-    if(score === random) {
+    if (score === random) {
         wins++;
+        
     // if the number added up > the random number, lose!
 
     } else if (score > random) {
         loses++;
     }
 
-    $("#score").text(score);
 
 
     winsText.textContent = "wins: " + wins;
