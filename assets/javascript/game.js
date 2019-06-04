@@ -31,6 +31,7 @@ $(document).ready(function() {
         console.log(score);
          // return score;
        $("#score").text(score);
+       [wins, losses, score] = checkWin(score, random, winsText, wins, lossesText, losses, totalScore, score);
 
       });
 
@@ -39,6 +40,7 @@ $(document).ready(function() {
         console.log(score);
         // return score;
         $("#score").text(score);
+        [wins, losses, score] = checkWin(score, random, winsText, wins, lossesText, losses, totalScore, score);
 
       });
 
@@ -47,6 +49,7 @@ $(document).ready(function() {
         console.log(score);
         // return score;
         $("#score").text(score);
+        [wins, losses, score] = checkWin(score, random, winsText, wins, lossesText, losses, totalScore, score);
 
       });
 
@@ -55,25 +58,33 @@ $(document).ready(function() {
         console.log(score);
         // return score;
         $("#score").text(score);
+        [wins, losses, score] = checkWin(score, random, winsText, wins, lossesText, losses, totalScore, score);
+
 
       });
 
 
+      function checkWin(score, random, winsText, wins, lossesText, losses, totalScore, score) {
+      
+        // if the number added up === the random number, win!
+      
+          if (score === random) {
+              wins++;
+      
+      
+          // if the number added up > the random number, lose!
+      
+          } else if (score > random) {
+              loses++;
+          }
+      
+          winsText.textContent = "wins: " + wins;
+          lossesText.textContent = "losses: " + losses;
+          totalScore.textContent = score;
 
-    // if the number added up === the random number, win!
-    if (score === random) {
-        wins++;
-        
-    // if the number added up > the random number, lose!
+          return [wins, losses, score];
+      
+      }
 
-    } else if (score > random) {
-        loses++;
-    }
-
-
-
-    winsText.textContent = "wins: " + wins;
-    lossesText.textContent = "losses: " + losses;
-    totalScore.textContent = score;
 
 });
